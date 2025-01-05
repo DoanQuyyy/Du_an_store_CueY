@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" th:href="@{/assets/CSS/GioiThieu.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/assets/CSS/bootstrap.min.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <script th:src="@{/assets/Js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/assets/Js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="top">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </div>
+        </div>
+        <div class="container-fixed">
+            <aside class="sidebar">
+                <div class="profile">
+                  <img th:src="@{/assets/Image/Nhanhieu.png}" alt="Profile Picture" class="profile-pic">
+                  <p>Đoàn Qúy</p>
+                  <p class="welcome">Chào mừng bạn trở lại</p>
+                </div>
+                <nav class="menu">
+                  <ul>
+                    <li><a href="#">Gioi Thiệu</a></li>
+                    <li><a href="#">Quản Lý Nhân Viên</a></li>
+                    <li><a href="#">Quản Lý Khách Hàng</a></li>
+                    <li><a th:href="@{/admin/QLSPham}">Quản Lý Sản Phẩm</a></li>
+                    <li><a href="#">Quản Lý Đơn Hàng</a></li>
+                    <li><a href="#">Quản Lý Nội Bộ</a></li>
+                    <li><a href="#">Báo Cáo Doanh Thu</a></li>
+                    <li><a href="#">Cài Đặt Hệ Thống</a></li>
+                  </ul>
+                </nav>
+              </aside>
+              <div class="GioiThieu ">
+                <div class="about bg1">
+                  <div class="captionWrap">
+                    <p> <h1>Gioi Thiệu Phần Quản Trị CueY Shop</h1></p>
+                    <p> <h4>Chào mừng bạn đến với hệ thống quản trị của CueY Shop!</h4></p>
+                    <p> <h4>Tại đây, bạn có thể thực hiện các tác vụ quản lý như kiểm soát sản phẩm, theo dõi đơn hàng, xử lý thống kê doanh thu, và quản lý khách hàng một cách dễ dàng.</h4></p>
+                    <p> <h4>Hệ thống được thiết kế thân thiện, tối ưu giúp bạn quản lý shop hiệu quả và tiết kiệm thời gian.</h4></p>
+                  </div>
+                </div>
+
+              </div>
+        </div>
+        <footer>
+          
+        </footer>
+    </div>
+</body>
+</html>

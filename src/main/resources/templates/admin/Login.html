@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trang Chu</title>
+        <link rel="stylesheet" th:href="@{/assets/CSS/Login.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" th:href="@{/assets/CSS/bootstrap.min.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <script th:src="@{/assets/Js/jquery-3.3.1.min.js}"></script>
+        <script th:src="@{/assets/Js/bootstrap.min.js}"></script>
+    </head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="anh"><img th:src="@{/assets/Image/Nhanhieu.png}" alt=""></div>
+        </div>
+        <div class="container-fluid">
+            <div class="Login">
+                <div class="fr-flbox">
+                    <form class="dn" th:action="@{/login}" method="post">
+                        <div class="title">ĐĂNG NHẬP</div>
+                        <div class="note">Đăng nhập bằng địa chỉ email và mật khẩu của bạn</div>
+                        <div class="txt-label">
+                            <div class="form-label">ĐỊA CHỈ EMAIL</div>
+                            <div class="txt-input">
+                                <input type="text" name="username"  placeholder="Nhập email hợp lệ" >
+                            </div>
+                        </div>
+                        <div class="txt-label">
+                            <div class="form-label">MẬT KHẨU</div>
+                            <div class="txt-input">
+                                <input type="text" name="password">
+                            </div>
+                            <div class="fr-auxiliary-text">Mật khẩu cần có ít nhất 08 kí tự(bao gồm cả chữ và số). Chỉ có thể sử dụng các ký tự đặc biệt này -_.@</div>
+                        </div>
+                        <div class="btn-dn">
+                            <button type="submit">Dang Nhap</button>
+                        </div>
+                    </form>
+                    <div class="dk">
+                        <div class="title">TẠO MỘT TÀI KHOẢN</div>
+                        <div class="intro">Hãy tạo tài khoản ngay ! Bạn có thể nhận được các dịch vụ đặc biệt cho riêng bạn như kiểm tra lịch sử mua hàng và nhận phiếu giảm giá cho thành viên. Đăng ký miễn phí ngay hôm nay!</div>
+                        <div class="btn">
+                            <button><a href="">TẠO TÀI KHOẢN </a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="bq">
+                <span>Bản quyền thuộc Công ty TNHH CUEY. Bảo lưu mọi quyền.</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

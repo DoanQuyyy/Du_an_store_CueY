@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  .wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  .header {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(216, 216, 219);
+  }
+  .header .top{
+    display: flex;
+    justify-content: flex-end; /* Căn nội dung sang bên phải */
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+  }
+  .header .top i{
+    font-size: 20px;
+  }
+  
+  .container-fixed {
+    display: flex;    
+  }
+  .container-fixed .sidebar {
+    height: 100%;
+    width: 15%;
+    background-color: rgb(216, 216, 219);
+  }
+  .profile {
+    text-align: center;
+    border-bottom: 1px solid rgb(57, 52, 52);
+  }
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 15px 0px;
+    text-align: center;
+  }
+  .menu li:hover {
+    background-color: black;
+  }
+  .menu li a{
+    color: rgb(24, 24, 24);
+    text-decoration: none;
+  }
+  .menu li a:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  .main-content {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 0;
+  }
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d2b3a;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .top-nav .logo {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .top-nav .user-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-nav .user-menu p {
+    margin-right: 15px;
+  }
+  
+  .top-nav .user-icon img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .GioiThieu{
+    padding: 15px;
+    flex-grow: 1;
+    width: 100%;
+  }
+  .GioiThieu  h1{
+    text-align: center;
+  }
+  
+  footer {
+    height: 137px;
+    width: 100%;
+    background-color: rgb(216, 216, 219);
+  }
