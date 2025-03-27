@@ -39,4 +39,14 @@ public class ProductServiceImpl implements ProductService {
         return false;
     }
 
+    @Override
+    public List<Product> findByProduct(String name) {
+        return this.productRepositories.findByProduct(name);
+    }
+    @Override
+    public List<Product> findByProductt(String name) {
+        return this.productRepositories.findByProductt(name);
+    }
+
+
 }

@@ -1,8 +1,11 @@
 package com.example.cueyshop.services;
 
-import java.awt.*;
+
+import com.example.cueyshop.model.color;
+
 import java.util.List;
 
 public interface ColorService {
-    List<Color> getAll();
+    List<color> getAll();
+    Boolean add(color color);
 }

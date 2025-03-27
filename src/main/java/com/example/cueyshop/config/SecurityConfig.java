@@ -23,12 +23,12 @@ public class SecurityConfig {
     }
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable()).authorizeHttpRequests((auth)->auth.requestMatchers("/*").permitAll().requestMatchers("/admin/**").hasAuthority("ADMIN").anyRequest().authenticated()).formLogin(login->login.loginPage("/login").loginProcessingUrl("/login").usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/admin",true));
+        http.csrf(csrf -> csrf.disable()).authorizeHttpRequests((auth)->auth.requestMatchers("/CueYShop/**").permitAll().requestMatchers("/admin/**").hasAuthority("ADMIN").requestMatchers("/login", "/login?error").permitAll().anyRequest().authenticated()).formLogin(login->login.loginPage("/login").loginProcessingUrl("/login").usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/admin",true));
         return http.build();
     }
     @Bean
     WebSecurityCustomizer webSecurityCustomizer() {
-        return (web)->web.debug(true).ignoring().requestMatchers("/static/**","/assets/**");
+        return (web)->web.debug(true).ignoring().requestMatchers("/static/**","/assets/**","Image/**");
     }
 
 }

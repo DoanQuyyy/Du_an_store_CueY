@@ -15,17 +15,17 @@
         <div class="mt-3">
             <div class="row">
                 <div class="col-12">
-                    <a href="">
+                    <a th:href="@{/CueYShop/BoSuuTap}">
                         <img th:src="@{/assets/Image/BST_Non_Branded.jpg}" alt="">
                     </a>
                 </div>
             </div>
         </div>
-        <div class="mt-3">
+        <div class="mt-3" th:each ="clr : ${collectionnList}">
             <div class="row">
                 <div class="col-12">
-                    <a href="">
-                        <img th:src="@{/assets/Image/BST_SEVENTY_SEVEN_TRANG_CHỦ.jpg}" alt="">
+                    <a th:href="@{/admin/bosuutap/{collectionName}(collectionName=${clr.collectionName})}">
+                        <img th:src="@{/Image/{imageName}(imageName=${clr.image})}" alt="">
                     </a>
                 </div>
             </div>

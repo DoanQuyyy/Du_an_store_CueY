@@ -26,16 +26,20 @@
                   <p class="welcome">Chào mừng bạn trở lại</p>
                 </div>
                 <nav class="menu">
-                  <ul>
-                    <li><a href="#">Gioi Thiệu</a></li>
-                    <li><a href="#">Quản Lý Nhân Viên</a></li>
-                    <li><a href="#">Quản Lý Khách Hàng</a></li>
-                    <li><a th:href="@{/admin/QLSPham}">Quản Lý Sản Phẩm</a></li>
-                    <li><a href="#">Quản Lý Đơn Hàng</a></li>
-                    <li><a href="#">Quản Lý Nội Bộ</a></li>
-                    <li><a href="#">Báo Cáo Doanh Thu</a></li>
-                    <li><a href="#">Cài Đặt Hệ Thống</a></li>
-                  </ul>
+                    <ul>
+                        <li><a href="#">Giới Thiệu</a></li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#product-management-menu" aria-expanded="false" aria-controls="product-management-menu">Quản Lý Sản Phẩm</a>
+                            <ul class="collapse" id="product-management-menu">
+                                <li><a th:href="@{/admin/Category/TheLoai}">Thể Loại</a></li>
+                                <li><a th:href="@{/admin/Product}">Sản Phẩm</a></li>
+                                <li><a th:href="@{/admin/color}">Màu Sắc</a></li>
+                                <li><a th:href="@{/admin/bosuutap}">Bộ Sưu Tập</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Quản Lý Nhân Viên</a></li>
+                        <li><a href="#">Báo Cáo Doanh Thu</a></li>
+                    </ul>
                 </nav>
               </aside>
               <div class="GioiThieu ">

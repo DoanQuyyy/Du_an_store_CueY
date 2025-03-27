@@ -22,7 +22,9 @@ public class Product {
     @Column(name = "Price")
     private double Price;
     @Column(name = "Stock")
-    private int Stock;
+    private Integer Stock;
+    @Column(name = "Quanlity")
+    private double Quanlity;
     @ManyToOne
     @JoinColumn(name = "Categories_ID",referencedColumnName = "Categories_ID")
     private Category Category;
@@ -36,7 +38,7 @@ public class Product {
         super();
     }
 
-    public Product(int product_ID, String product_Name, String description, String image, boolean is_Like, int stock, double price, Category category, Collectionn collectionn, color clor) {
+    public Product(int product_ID, String product_Name, String description,double Quanlity, String image, boolean is_Like, Integer stock, double price, Category category, Collectionn collectionn, color clor) {
         super();
         Product_ID = product_ID;
         Product_Name = product_Name;
@@ -45,9 +47,18 @@ public class Product {
         Is_Like = is_Like;
         Stock = stock;
         Price = price;
+        Quanlity = Quanlity;
         this.Category = category;
         this.collectionn = collectionn;
         this.clor = clor;
+    }
+
+    public double getQuanlity() {
+        return Quanlity;
+    }
+
+    public void setQuanlity(double quanlity) {
+        Quanlity = quanlity;
     }
 
     public int getProduct_ID() {
@@ -98,7 +109,7 @@ public class Product {
         Price = price;
     }
 
-    public int getStock() {
+    public Integer getStock() {
         return Stock;
     }
 

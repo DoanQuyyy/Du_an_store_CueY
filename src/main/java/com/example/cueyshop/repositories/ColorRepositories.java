@@ -1,8 +1,9 @@
 package com.example.cueyshop.repositories;
 
+import com.example.cueyshop.model.color;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.awt.*;
 
-public interface ColorRepositories extends JpaRepository<Color, Integer> {
+
+public interface ColorRepositories extends JpaRepository<color, Integer> {
 }

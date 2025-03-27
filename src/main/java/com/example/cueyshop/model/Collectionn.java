@@ -7,19 +7,21 @@ import jakarta.persistence.*;
 public class Collectionn {
     @Id
     @Column(name = "Collection_ID")
-    private int collectionID;
+    private Integer collectionID;
     @Column(name = "Collection_name")
     private String collectionName;
-    @ManyToOne
-    @JoinColumn(name = "Categories_ID",referencedColumnName = "Categories_ID")
-    private Category category;
+    @Column(name = "Image")
+    private String image;
+    @Column(name = "Description")
+    private String description;
     public Collectionn() {
         super();
     }
-    public Collectionn(int collectionID, String collectionName, Category category) {
+    public Collectionn(Integer collectionID, String collectionName, String image, String description) {
         this.collectionID = collectionID;
         this.collectionName = collectionName;
-        this.category = category;
+        this.image = image;
+        this.description = description;
     }
 
     public String getCollectionName() {
@@ -30,19 +32,27 @@ public class Collectionn {
         this.collectionName = collectionName;
     }
 
-    public int getCollectionID() {
+    public Integer getCollectionID() {
         return collectionID;
     }
 
-    public void setCollectionID(int collectionID) {
+    public void setCollectionID(Integer collectionID) {
         this.collectionID = collectionID;
     }
 
-    public Category getCategory() {
-        return category;
+    public String getImage() {
+        return image;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

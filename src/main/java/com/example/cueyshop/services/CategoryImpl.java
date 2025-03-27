@@ -33,11 +33,23 @@ public class CategoryImpl implements CategoryService {
 
     @Override
     public Boolean update(Category category) {
-        return null;
+        try {
+            this.categoryRepositories.save(category);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override
-    public Boolean delete(int id) {
-        return null;
+    public Boolean delete(Category category) {
+        try {
+            this.categoryRepositories.delete(category);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }

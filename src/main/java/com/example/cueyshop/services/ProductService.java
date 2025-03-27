@@ -10,6 +10,6 @@ public interface ProductService {
     Boolean create(Product product);
     Boolean update(Product product);
     Boolean delete(int id);
-
-
+    List<Product> findByProduct(String name);
+    List<Product> findByProductt(String name);
 }

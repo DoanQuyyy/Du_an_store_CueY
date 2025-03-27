@@ -8,7 +8,7 @@
         <li class="dropdown has-children">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" >BỘ SƯU TẬP <i class="fa-solid fa-angle-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Non Branded (Tối giản, tiết kiệm)</a></li>
+            <li><a class="dropdown-item" th:href="@{/CueYShop/BoSuuTap}">Non Branded (Tối giản, tiết kiệm)</a></li>
             <li><a class="dropdown-item" href="#">Seventy Seven (Gía tốt, Jean 277k)</a></li>
             <li><a class="dropdown-item" href="#">No Style (Gu nào cũng có)</a></li>
             <li><a class="dropdown-item" href="#">Premium (Dáng chuẩn, Vải xịn)</a></li>
@@ -27,11 +27,11 @@
           <a href=""  class="dropdown-toggle">MỚI</a>
         </li>
         <li class="dropdown has-children">
-          <a href=""  class="dropdown-toggle">ÁO THUN NAM | NỮ <i class="fa-solid fa-angle-down"></i></a>
+          <a href=""  class="dropdown-toggle">DANH MỤC SẢN PHẨM <i class="fa-solid fa-angle-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Áo Thun Trơn </a></li>
-            <li><a class="dropdown-item" href="#">Áo Thun Có Hình</a></li>
-            <li><a class="dropdown-item" href="#">Áo Thun Ba Lỗ</a></li>
+            <li th:each="category : ${categoryList}" >
+              <a class="dropdown-item" th:text="${category.categoryName}" th:href="@{/CueYShop/TheLoai/{name}(name=${category.categoryName})}"></a>
+            </li>
           </ul>
         </li>
       </ul>
