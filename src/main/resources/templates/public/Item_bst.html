@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chu</title>
+    <link rel="stylesheet" th:href="@{/assets/CSS/Item_bst.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/assets/CSS/bootstrap.min.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <script th:src="@{/assets/Js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/assets/Js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <img th:src="@{/assets/Image/Nhanhieu.png}" alt="">
+            </div>
+            <div class="menu">
+                <nav class="site-navigation">
+                    <ul class="site-menu">
+                        <li class="dropdown has-children">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" >BỘ SƯU TẬP <i class="fa-solid fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Non Branded (Tối giản, tiết kiệm)</a></li>
+                                <li><a class="dropdown-item" href="#">Seventy Seven (Gía tốt, Jean 277k)</a></li>
+                                <li><a class="dropdown-item" href="#">No Style (Gu nào cũng có)</a></li>
+                                <li><a class="dropdown-item" href="#">Premium (Dáng chuẩn, Vải xịn)</a></li>
+                                <li><a class="dropdown-item" href="#">Cool Touch (Vải mềm ,mịn , mát)</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown has-children">
+                            <a href=""  class="dropdown-toggle" data-toggle="dropdown">GÍA LUÔN TỐT <i class="fa-solid fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Thời Trang Giá Tốt</a></li>
+                                <li><a class="dropdown-item" href="#">Phụ Kiện Gía Tốt</a></li>
+                                <li><a class="dropdown-item" href="#">Sale Kết Thúc Vòng Đời</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">   
+                            <a href=""  class="dropdown-toggle">MỚI</a>
+                        </li>
+                        <li class="dropdown has-children">
+                            <a href=""  class="dropdown-toggle">DANH MỤC SẢN PHẨM <i class="fa-solid fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li th:each="category : ${categoryList}">
+                                    <a class="dropdown-item" th:text="${category.categoryName}"></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="icon" id="right-icon-bar">
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="">EXPLORE</a>
+                <a href=""><i class="fa-regular fa-user"></i></a>
+                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="breadcrumb">
+                        <a href=""><i class="fa-solid fa-house"></i></a>
+                        <span class="mx-02 mb-0">/</span>
+                        <strong class="text-black" th:text="${pd[0].collectionn.collectionName}" ></strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <div class="ms-list-1">
+                            <button type="button">
+                                <span>Lọc sản phẩm phù hợp</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <img src="../Image/BST_Non_Branded.jpg" alt="">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-5">
+                    <div class="listProductSort">
+                        <span><a href="">Nổi Bật</a></span>
+                        <span>/</span>
+                        <span><a href="">Bán Chạy</a></span>
+                        <span>/</span>
+                        <span><a href="">Mới</a></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4" th:each="product : ${pd}">
+                    <div class="pitem">
+                        <div>
+                            <div class="bookmark-heart-wrapper"></div>
+                            <div class="hinh">
+                                <a href="#">
+                                    <img class="img-default img-fluid" th:src="@{/Image/{imageName}(imageName=${product.image})}" alt="Ảnh sản phẩm">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <p th:text="${product.product_Name}"></p>
+                        <p th:text="${product.price}"></p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <a href=""><img src="../Image/Cuoitrsng.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>Đặt hàng và thu tiền tận nơi toàn quốc</p>
+                        <h5>LIÊN HỆ: 0394743238</h5>
+                        <h4>CHƯƠNG TRÌNH KHUYẾN MÃI</h4>
+                        <h4>GIỚI THIỆU VỀ CUEY</h4>
+                        <h4>GIỚI THIỆU VỀ CÁC BỘ SƯU TẬP</h4>
+                        <h4>Xem thêm thông tin về CueY</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <hr>
+                        <p>2024 - CÔNG TY TNHH CUEY</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Đã Thông Báo </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,232 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%; /* Đảm bảo chiều cao của html và body chiếm toàn bộ màn hình */
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column; /* Các phần tử con của wrapper sẽ xếp theo chiều dọc */
+    height: 100%; /* Wrapper chiếm toàn bộ chiều cao của màn hình */
+  }
+  
+  .header {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(216, 216, 219);
+  }
+  
+  .header .top {
+    display: flex;
+    justify-content: flex-end; /* Căn nội dung sang bên phải */
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+  }
+  .header .top i{
+    font-size: 20px;
+  }
+  .container-fixed {
+    display: flex;    
+    flex: 1; /* Phần này sẽ chiếm phần còn lại của màn hình */
+  }
+  
+  .container-fixed .sidebar {
+    height: 100%;
+    width: 15%;
+    background-color: rgb(216, 216, 219);
+  }
+  .profile {
+    text-align: center;
+    border-bottom: 1px solid rgb(57, 52, 52);
+  }
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu li {
+    padding: 15px 0px;
+    text-align: center;
+  }
+  .menu li:hover {
+    background-color: black;
+  }
+  .menu li a{
+    color: rgb(24, 24, 24);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .menu li:hover a {
+    color: white; /* Đổi màu chữ của thẻ a khi hover vào thẻ li */
+    text-decoration: none;
+  }
+  .menu li .collapse li {
+    background-color: transparent; /* Đảm bảo danh sách con không bị ảnh hưởng */
+  }
+
+  .collapse li a {
+    color: black; /* Giữ màu chữ của danh sách con */
+  }
+  .collapse li:hover a {
+    color: rgb(18, 84, 55); /* Tùy chỉnh màu chữ khi hover vào li con nếu cần */
+  }
+  .main-content {
+    flex: 1; /* Phần này sẽ chiếm phần còn lại, bên cạnh sidebar */
+    background-color: #f4f4f4;
+    padding: 0;
+  }
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d2b3a;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .top-nav .logo {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .top-nav .user-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-nav .user-menu p {
+    margin-right: 15px;
+  }
+  
+  .top-nav .user-icon img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .QLNV{
+    padding: 15px 15px;
+    width: 100%;
+    background-color: #ece6e6;
+  }
+  .tag {
+    height: 40px;
+    width: 100%;
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+    position: relative; /* Để có thể căn chỉnh phần tử con */
+  }
+  
+  .tag-color {
+    height: 98%; /* Chiều cao của phần màu chiếm toàn bộ chiều cao của thẻ tag */
+    width: 3px; /* Chiều rộng của phần màu dọc */
+    background-color: #127b23; /* Màu của phần màu */
+    border-radius: 3px; /* Bo góc của phần màu */
+    position: absolute;
+    top: 0; /* Đặt phần màu ở trên cùng */
+    left: 0; /* Đặt phần màu ở bên trái */
+  }
+  
+  .tag p {
+    margin: 0px;
+    padding: 0px 25px;
+    flex-grow: 1; /* Để văn bản không bị đẩy lệch khi có phần màu */
+  }
+  /* Style chung cho form */
+  .product-form {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử lấp đầy không gian */
+    gap: 20px 40px; /* Giữa các nhóm sẽ có khoảng cách ngang và dọc */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 48%; /* Chiếm 48% chiều rộng để có khoảng cách giữa các trường */
+  }
+  
+  .form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px; /* Khoảng cách giữa label và input/select */
+    color: #333;
+    width: 200px; /* Để nhãn có kích thước cố định */
+  }
+  
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 100%; /* Chiếm toàn bộ không gian của form-group */
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #1d2b3a;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    height: 80px;
+  }
+  
+  .form-group input[type="file"] {
+    padding: 5px;
+  }
+  
+  /* Căn giữa button */
+  .form-group:last-child {
+    width: 100%; /* Để nút chiếm toàn bộ chiều rộng của phần còn lại */
+    display: flex;
+    justify-content: center; /* Căn giữa nút */
+  }
+  
+  .btn-submit {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1d2b3a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px; /* Chiều rộng của nút */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0d1a26;
+    transform: translateY(-2px);
+  }
+  
+  .btn-submit:active {
+    transform: translateY(2px);
+  }
+  
+  footer {
+    background-color: rgb(216, 216, 219);
+    height: 50px; /* Chỉnh chiều cao footer */
+    width: 100%; 
+    position: relative;
+  }
+  

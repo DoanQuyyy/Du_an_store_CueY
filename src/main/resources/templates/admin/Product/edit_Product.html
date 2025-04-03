@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" th:href="@{/assets/CSS/add_Product.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/assets/CSS/bootstrap.min.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <script th:src="@{/assets/Js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/assets/Js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="top">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </div>
+        </div>
+        <div class="container-fixed">
+            <aside class="sidebar">
+                <div class="profile">
+                  <img src="../Image/Nhanhieu.png" alt="Profile Picture" class="profile-pic">
+                  <p>Đoàn Qúy</p>
+                  <p class="welcome">Chào mừng bạn trở lại</p>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="../HTML/GioiThieu.html">Giới Thiệu</a></li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#product-management-menu" aria-expanded="false" aria-controls="product-management-menu">Quản Lý Sản Phẩm</a>
+                            <ul class="collapse" id="product-management-menu">
+                                <li><a href="#">Thể Loại</a></li>
+                                <li><a href="#">Sản Phẩm</a></li>
+                                <li><a href="#">Màu Sắc</a></li>
+                                <li><a href="#">Hình Ảnh</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Quản Lý Nhân Viên</a></li>
+                        <li><a href="#">Báo Cáo Doanh Thu</a></li>
+                    </ul>
+                </nav>
+              </aside>
+              <div class="QLNV">
+                <div class="tag">
+                  <div class="tag-color"></div>
+                  <p>Edit Sản Phẩm</p>
+                </div>
+                  <form class="product-form" th:action="@{/admin/Product/addProduct}" method="post"  th:object="${product}" >
+                      <div class="form-group">
+                          <label for="product-id">Mã sản phẩm:</label>
+                          <input th:field="${product.product_ID}" type="text" id="product-id" name="product-id" placeholder="Nhập mã sản phẩm" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="product-name">Tên sản phẩm:</label>
+                          <input th:field="${product.product_Name}" type="text" id="product-name" name="product-name" placeholder="Nhập tên sản phẩm" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="product-description">Mô tả:</label>
+                          <textarea th:field="${product.description}" id="product-description" name="product-description" placeholder="Nhập mô tả sản phẩm" required></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="product-price">Gía tiền:</label>
+                          <input th:field="${product.price}" id="product-price" name="product-price" placeholder="Nhập giá tiền" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="product-quanlity">Số lượng:</label>
+                          <input th:field="${product.quanlity}" id="product-quanlity" name="product-quanlity" placeholder="Nhập số lượng" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="product-color">Màu sắc:</label>
+                          <select th:field="*{clor}" id="product-color" name="product-color" required>
+                              <option th:each="color : ${color}"
+                                      th:value="${color.id}"
+                                      th:text="${color.colorName}">
+                              </option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="product-image">Ảnh sản phẩm:</label>
+                          <input type="file" id="product-image" name="product-image" >
+                      </div>
+
+                      <div class="form-group">
+                          <label for="product-category">Thể loại:</label>
+                          <select th:field="*{category}" id="product-category" name="product-category" required>
+                              <option th:each="category : ${categoryList}"
+                                      th:value="${category.id}"
+                                      th:text="${category.categoryName}">
+                              </option>
+
+
+                          </select>
+                      </div>
+                    
+                    <div class="form-group">
+                      <button type="submit" class="btn-submit">Update</button>
+                    </div>
+                  </form>
+                  
+                
+              </div>
+        </div>
+        <footer>
+          
+        </footer>
+
+      
+
+        
+    </div>
+</body>
+</html>

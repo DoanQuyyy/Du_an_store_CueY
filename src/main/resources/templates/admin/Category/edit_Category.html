@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" th:href="@{/assets/CSS/add_Category.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/assets/CSS/bootstrap.min.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <script th:src="@{/assets/Js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/assets/Js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="top">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </div>
+        </div>
+        <div class="container-fixed">
+            <aside class="sidebar">
+                <div class="profile">
+                  <img src="../Image/Nhanhieu.png" alt="Profile Picture" class="profile-pic">
+                  <p>Đoàn Qúy</p>
+                  <p class="welcome">Chào mừng bạn trở lại</p>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="../HTML/GioiThieu.html">Giới Thiệu</a></li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#product-management-menu" aria-expanded="false" aria-controls="product-management-menu">Quản Lý Sản Phẩm</a>
+                            <ul class="collapse" id="product-management-menu">
+                                <li><a th:href="@{/admin/Category/TheLoai}">Thể Loại</a></li>
+                                <li><a href="#">Sản Phẩm</a></li>
+                                <li><a href="#">Màu Sắc</a></li>
+                                <li><a href="#">Hình Ảnh</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Quản Lý Nhân Viên</a></li>
+                        <li><a href="#">Báo Cáo Doanh Thu</a></li>
+                    </ul>
+                </nav>
+              </aside>
+              <div class="QLNV">
+                <div class="tag">
+                  <div class="tag-color"></div>
+                  <p>Edit thể loại</p>
+                </div>
+                <form class="category-form" th:action="@{/admin/Category/EditCategory}" method=post th:object="${category}">
+                  <div class="form-group">
+                    <label for="category-name">Tên thể loại:</label>
+                    <input th:field="*{categoryName}" type="text" id="category-name" name="category-name" placeholder="Nhập tên thể loại mới" required>
+                      <input type="hidden" class="form-control" th:field="*{id}">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn-accept">Update</button>
+                  </div>
+                </form>
+                
+              </div>
+        </div>
+        <footer>
+          
+        </footer>
+
+      
+
+        
+    </div>
+</body>
+</html>
